@@ -1,0 +1,55 @@
+.page {
+  padding: 4.8rem;
+  color: #333;
+
+  & h1 {
+    color: #333;
+  }
+}
+
+.formRow {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-weight: 600;
+
+  & input {
+    font: inherit;
+  }
+}
+
+.stopwatch {
+  display: flex;
+  gap: 0.8rem;
+
+  & button {
+    padding: 0.8rem 2.4rem;
+    background-color: oklch(44.8% 0.119 151.328);
+    color: oklch(96.8% 0.007 247.896);
+    font-weight: 600;
+    border-radius: 8px;
+  }
+
+  & input {
+    font: inherit;
+    font-weight: 600;
+  }
+}
+
+.red {
+  background-color: oklch(44.4% 0.177 26.899) !important;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  align-items: flex-start;
+
+  & > button {
+    padding: 0.8rem 2.4rem;
+    font-weight: 600;
+    border-radius: 8px;
+    background-color: oklch(96.8% 0.007 247.896);
+  }
+}

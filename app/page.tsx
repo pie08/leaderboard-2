@@ -6,6 +6,7 @@ import { FC, useEffect, useState } from "react";
 import { formatPositions } from "./_lib/formatPositions";
 import { channel } from "./_lib/channel";
 import { getPositions } from "./_lib/actions";
+import Link from "next/link";
 
 export default function Home() {
   // const { data: positions } = await getPositions();
@@ -41,6 +42,10 @@ export default function Home() {
         className={styles.backgroundImage}
         fill
       />
+
+      <Link href="/add-position" className={styles.link}>
+        Add positions
+      </Link>
     </div>
   );
 }

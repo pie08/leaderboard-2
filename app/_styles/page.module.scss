@@ -47,6 +47,29 @@
   grid-template-columns: max-content 1fr;
   justify-items: end;
 
+  & .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    translate: 50% -50%;
+
+    width: 2.4rem;
+    height: 2.4rem;
+    background-color: oklch(96.8% 0.007 247.896);
+    border-radius: 999rem;
+
+    & svg {
+      width: 2rem;
+      color: oklch(57.7% 0.245 27.325);
+    }
+
+    display: none;
+  }
+
+  &:hover .close {
+    display: block;
+  }
+
   & .rank {
     position: absolute;
     top: 50%;

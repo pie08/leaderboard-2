@@ -32,3 +32,10 @@ export async function addPosition(formData: FormData) {
     .insert([{ name: data.name, time: data.time }]);
   if (error) console.error(error);
 }
+
+export async function deletePosition(id: string) {
+  const { error } = await supabase.from("positions").delete().eq("id", id);
+  if (error) {
+    console.log(error);
+  }
+}

@@ -1,6 +1,13 @@
 "use client";
 
-import { FC, MouseEvent, useCallback, useEffect, useState } from "react";
+import {
+  ChangeEvent,
+  FC,
+  MouseEvent,
+  useCallback,
+  useEffect,
+  useState,
+} from "react";
 import styles from "../_styles/addPosition.module.scss";
 import prettyMilliseconds from "pretty-ms";
 import { addPosition } from "../_lib/actions";
@@ -43,6 +50,11 @@ const Page: FC<pageProps> = ({}) => {
     }
   }
 
+  function handleUserTimeInput(e: ChangeEvent<HTMLInputElement>) {
+    const milliseconds = Number(e.target.value) * 1000;
+    setTimeDelta(milliseconds);
+  }
+
   return (
     <div className={styles.page}>
       <h1>Add Position</h1>
@@ -64,6 +76,11 @@ const Page: FC<pageProps> = ({}) => {
           >
             {!isCounting ? "Start" : "Stop"}
           </button>
+        </div>
+
+        <div className={styles.formRow}>
+          <label htmlFor="userTime">Input your own time (seconds)</label>
+          <input type="number" id="userTime" onChange={handleUserTimeInput} />
         </div>
 
         <button>Submit</button>

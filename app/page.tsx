@@ -36,9 +36,15 @@ export default function Home() {
     }
 
     // only fetch if not paused
+    let timer: NodeJS.Timeout;
     if (isLoadLoop) {
-      setTimeout(loadData, 5000);
+      timer = setTimeout(loadData, 2000);
     }
+
+    // cleanup function
+    return () => {
+      clearTimeout(timer);
+    };
   }, [positions, isLoadLoop]);
 
   const rankedPositions = formatPositions(positions);
